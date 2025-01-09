@@ -1,8 +1,8 @@
-package org.example.service;
+package org.example.aluno.service;
 
 
 import org.example.aluno.AlunoDAO;
-import org.example.conexao.ConnectionFactory;
+import org.example.aluno.conexao.ConnectionFactory;
 
 import java.sql.Connection;
 import java.util.Scanner;

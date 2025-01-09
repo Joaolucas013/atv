@@ -1,7 +1,9 @@
 package org.example.atividadepratica.Q1Q2.Q1.service;
 
+
+
 import org.example.atividadepratica.Q1Q2.Q1.exception.LampadaException;
-import org.example.Q1.lampada.Lampada;
+import org.example.atividadepratica.Q1Q2.Q1.lampada.Lampada;
 
 import java.util.ArrayList;
 import java.util.List;

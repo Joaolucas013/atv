@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.service.Service;
+import org.example.aluno.service.Service;
 
 import java.util.Scanner;
 
-public class Main {
+public class AlunoMain {
 
     static Scanner scanner = new Scanner(System.in);
     //static List<Aluno> alunos = new ArrayList<>();

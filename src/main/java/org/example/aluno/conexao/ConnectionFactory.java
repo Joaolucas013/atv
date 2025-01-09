@@ -1,4 +1,4 @@
-package org.example.conexao;
+package org.example.aluno.conexao;
 
 import com.zaxxer.hikari.HikariDataSource;
 

@@ -1,7 +1,10 @@
  package org.example;
 
 
- import org.example.Q1.service.Service;
+
+
+
+ import org.example.atividadepratica.Q1Q2.Q1.service.Service;
 
  import java.util.Scanner;
 
