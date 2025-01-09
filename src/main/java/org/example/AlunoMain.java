@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.aluno.Aluno;
 import org.example.aluno.service.Service;
 
 import java.util.Scanner;
@@ -8,6 +9,7 @@ public class AlunoMain {
 
     static Scanner scanner = new Scanner(System.in);
     //static List<Aluno> alunos = new ArrayList<>();
+
 
     public  static Service service = new Service();
 
@@ -49,9 +51,35 @@ public class AlunoMain {
                 case 4:
                     listarPercentual();
                     break;
+                case 5:
+                   cadastrarAluno();
             }
 
         }
+    }
+
+    private static void cadastrarAluno() {
+        var aluno = cadastro();
+        service.cadastrarAluno(aluno);
+        System.out.println("Aluno cadastrado com sucesso!");
+
+    }
+
+    private static Aluno cadastro() {
+        System.out.println("Informe a matricula do aluno:");
+        int matricula = new Scanner(System.in).nextInt();
+        System.out.println("Informe o nome do aluno");
+        String name = new Scanner(System.in).nextLine().trim();
+        System.out.println("Informe o sexo do aluno(a): (F/M)");
+        String sexo = new Scanner(System.in).nextLine().trim();
+        System.out.println("Informe o curso:");
+        String curso = new Scanner(System.in).nextLine().trim();
+        System.out.println("Informe o ano de ingresso:");
+        int ano = new Scanner(System.in).nextInt();
+        System.out.println("Informe o semestre de ingresso do aluno:");
+        int semestre = new Scanner(System.in).nextInt();
+        var aluno = new Aluno(matricula, name, sexo, curso, ano, semestre);
+        return aluno;
     }
 
     private static void listarPercentual() {
@@ -81,7 +109,7 @@ private static void menu() {
                     pelo usuário
                 3 - Listagem de quantidade de alunos até então inseridos
                 4 - listar percentual
-                
+                5 - cadastrar aluno
                """);
 }
 

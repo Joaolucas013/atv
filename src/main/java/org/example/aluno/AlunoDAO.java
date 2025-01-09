@@ -203,4 +203,29 @@ public class AlunoDAO {
         System.out.println("___________________________________________");
 
     }
+
+    public void cadastro(Aluno aluno) {
+        String sql = "INSERT INTO aluno(matricula, nome, sexo, curso, ano_ingresso, semestre_ingresso)" +
+                " values(?,?,?,?,?,?)";
+        PreparedStatement ps;
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, aluno.getMatricula());
+            ps.setString(2, aluno.getNome());
+            ps.setString(3, aluno.getSexo());
+            ps.setString(4, aluno.getCurso());
+            ps.setInt(5, aluno.getAnoIngresso());
+            ps.setInt(6, aluno.getSemestreIngresso());
+
+            ps.execute();
+            ps.close();
+            conn.close();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 package org.example.aluno.service;
 
 
+import org.example.aluno.Aluno;
 import org.example.aluno.AlunoDAO;
 import org.example.aluno.conexao.ConnectionFactory;
 
@@ -47,6 +48,14 @@ public class Service {
 
         System.out.println("Quantidade de pessoas cadastradas: " + aluno.size());
     }
+
+
+    public void cadastrarAluno(Aluno aluno) {
+     Connection connection1 = connection.retornarConexao();
+     new AlunoDAO(connection1).cadastro(aluno);
+
+    }
+
 
 
 }
