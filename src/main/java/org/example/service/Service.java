@@ -1,7 +1,10 @@
-package org.example;
+package org.example.service;
+
+
+import org.example.aluno.AlunoDAO;
+import org.example.conexao.ConnectionFactory;
 
 import java.sql.Connection;
-import java.util.List;
 import java.util.Scanner;
 
 public class Service {
@@ -19,6 +22,10 @@ public class Service {
                 .forEach(System.out::println);
     }
 
+    public void listarPercentualSexo() {
+        Connection conn = connection.retornarConexao();
+        new AlunoDAO(conn).listarPercentual();
+    }
 
     public void listarAnoSemestre() {
         Connection connec = connection.retornarConexao();
@@ -31,10 +38,13 @@ public class Service {
                 .forEach(System.out::println);
     }
 
-    public int quantidade() {
-        Connection connection1 = connection.retornarConexao();
-      var aluno =   new AlunoDAO(connection1).quantidade();
-      return aluno.size();
 
+    public void quantidade(){
+        Connection connection1 = connection.retornarConexao();
+        var aluno = new AlunoDAO(connection1).quantidade();
+
+        System.out.println("Quantidade de pessoas cadastradas: " + aluno.size());
     }
+
+
 }

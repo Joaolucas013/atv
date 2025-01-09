@@ -1,10 +1,8 @@
-package org.example;
+package org.example.conexao;
 
-import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
@@ -24,7 +22,7 @@ public class ConnectionFactory {
         hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/aluno_bank");
         hikariConfig.setUsername("root");
         hikariConfig.setPassword("root");
-        hikariConfig.setMaximumPoolSize(10);
+        hikariConfig.setMaximumPoolSize(12);
         return hikariConfig;
     }
 

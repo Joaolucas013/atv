@@ -1,14 +1,15 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.example.service.Service;
+
 import java.util.Scanner;
 
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     //static List<Aluno> alunos = new ArrayList<>();
-    public static  Service service = new Service();
+
+    public  static Service service = new Service();
 
     public static void main(String[] args) {
 
@@ -37,7 +38,7 @@ public class Main {
             int opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-               listarDadosAlunos();
+                    listarDadosAlunos();
                     break;
                 case 2:
                     listarPeloAnoAndSemestre();
@@ -45,31 +46,43 @@ public class Main {
                 case 3:
                     listarQuantidadeAlunos();
                     break;
+                case 4:
+                    listarPercentual();
+                    break;
             }
 
         }
     }
 
-    private static void listarQuantidadeAlunos() {
-        System.out.println("quantidade de alunos: " + service.quantidade());
+    private static void listarPercentual() {
+       service.listarPercentualSexo();
     }
 
-    private static void listarPeloAnoAndSemestre() {
-          service.listarAnoSemestre();
-    }
 
-    private static void listarDadosAlunos() {
-        service.listarDadosAlunos();
-    }
+private static void listarQuantidadeAlunos() {
+    service.quantidade();
 
-    private static void menu() {
-        System.out.println("""
+}
+
+private static void listarPeloAnoAndSemestre() {
+   service.listarAnoSemestre();
+}
+
+private static void listarDadosAlunos() {
+    service.listarDadosAlunos();
+
+}
+
+private static void menu() {
+    System.out.println("""
                 *** escolha uma opção!!! ***
                 1 - Listagem de matrículas, nomes, anos e semestres de ingresso de alunos de determinado curso
                 2 - Listagem de matrículas, nomes e cursos de alunos que ingressaram em determinado ano e semestre, a serem informados
                     pelo usuário
                 3 - Listagem de quantidade de alunos até então inseridos
+                4 - listar percentual
                 
                """);
-    }
+}
+
 }
