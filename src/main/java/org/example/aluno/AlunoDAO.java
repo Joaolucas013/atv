@@ -16,26 +16,26 @@ public class AlunoDAO {
         this.conn = connection;
     }
 
-    public List<Aluno> listar() {
+    public List<Aluno> listar(String curso) {
         List<Aluno> alunos = new ArrayList<>();
         PreparedStatement ps;
         ResultSet rs;
-       // List<Aluno> alunos = new ArrayList<>();
-        String sql = "select * from aluno ;";
+        String sql = "select * from aluno a where a.curso like ?;";
 
         try {
             ps = conn.prepareStatement(sql);
+            ps.setString(1, curso + "%");
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 int matricula = rs.getInt(1);
                 String nome = rs.getString(2);
                 String sexo = rs.getString(3);
-                String curso = rs.getString(4);
+                String cursoo = rs.getString(4);
                 int ano_ingresso = rs.getInt(5);
                 int semestre = rs.getInt(6);
 
-                Aluno aluno = new Aluno(matricula, nome, sexo, curso, ano_ingresso, semestre);
+                Aluno aluno = new Aluno(matricula, nome, sexo, cursoo, ano_ingresso, semestre);
                 alunos.add(aluno);
             }
             ps.execute();

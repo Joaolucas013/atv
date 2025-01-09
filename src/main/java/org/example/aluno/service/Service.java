@@ -17,7 +17,9 @@ public class Service {
 
     public void listarDadosAlunos() {
         Connection conn = connection.retornarConexao();
-        var aluno = new AlunoDAO(conn).listar();
+        System.out.println("informe o curso do aluno:");
+        String curso = new Scanner(System.in).nextLine();
+        var aluno = new AlunoDAO(conn).listar(curso);
         aluno.stream()
                 .forEach(System.out::println);
     }
