@@ -119,7 +119,7 @@ public class AlunoDAO {
     }
 
     private int listarQuantidadeFeminino() {
-        String sql = "Select * from aluno  where sexo = 'F' ";
+        String sql = "Select * from aluno a where a.sexo = 'F' ";
        List<Aluno> alunosFem = new ArrayList<>();
         PreparedStatement ps;
         ResultSet rs;
