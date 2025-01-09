@@ -36,7 +36,7 @@ public class AlunoMain {
         boolean encerrar = false;
 
         while (!encerrar) {
-            menu();
+            service.menu();
             int opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
@@ -101,16 +101,6 @@ private static void listarDadosAlunos() {
 
 }
 
-private static void menu() {
-    System.out.println("""
-                *** escolha uma opção!!! ***
-                1 - Listagem de matrículas, nomes, anos e semestres de ingresso de alunos de determinado curso
-                2 - Listagem de matrículas, nomes e cursos de alunos que ingressaram em determinado ano e semestre, a serem informados
-                    pelo usuário
-                3 - Listagem de quantidade de alunos até então inseridos
-                4 - listar percentual
-                5 - cadastrar aluno
-               """);
-}
+
 
 }
