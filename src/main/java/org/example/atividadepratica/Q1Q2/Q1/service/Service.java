@@ -84,19 +84,18 @@ public class Service {
     }
 
     public void listarPercentualDesligadas() {
-        List<Lampada> lampadaList = new ArrayList<>();
+         List<Lampada> lampadaList = new ArrayList<>();
 
         for (Lampada lamp : lampadas) {
             if (!lamp.isLigada()) {
                 lampadaList.add(lamp);
             }
         }
-        if (!lampadaList.isEmpty()) {
-            //casting
-            double percentDeslig = ((double) lampadaList.size() / QNT) * 100;
+        double percentDeslig = ((double) lampadaList.size() / QNT) * 100;
+        if(percentDeslig!=0) {
             System.out.println("Percentual de lampadas desligadas: " + percentDeslig + "%");
-        } else {
-            System.out.println("Não há nenhuma lampada ligada!!!");
+        }else{
+            System.out.println("Percentual desligada: " + percentDeslig);
         }
     }
 
