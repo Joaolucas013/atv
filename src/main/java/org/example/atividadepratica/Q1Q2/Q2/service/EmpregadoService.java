@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class EmpregadoService {
 
     static Scanner scan = new Scanner(System.in);
-    private static final int QNT = 2;
+    private static final int QNT = 6;
     private static Empregado[] empregados = new Empregado[QNT];
 
     public void inicializar(){
